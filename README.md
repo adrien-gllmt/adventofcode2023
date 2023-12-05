@@ -1,2 +1,3 @@
-# adventofcode2023
-Advent of Code 2023
+# ADVENT OF CODE 2023
+
+Using Ruby 3.2.2
