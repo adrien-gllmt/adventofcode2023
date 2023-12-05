@@ -12,6 +12,7 @@ puts "Part 1: #{total}"
 # END OF PART 1
 
 # BEGINNING OF PART 2
+total = 0
 def find_last_word(line, last_word)
   %w[one two three four five six seven eight nine].each do |n|
     last_word = { 'index' => line =~ /#{n}/, 'word' => n } if line =~ /#{n}/ && (line =~ /#{n}/) > last_word['index']
@@ -24,15 +25,11 @@ def find_last_num(line, last_num)
   end
 end
 
-def sum_total_with_letters(file)
-  total = 0
-  File.foreach(file) do |line|
-    last_word = { 'index' => 0, 'word' => '' }
-    last_num = { 'index' => 0, 'num' => 0 }
-    find_last_word(line, last_word)
-    find_last_num(line, last_num)
-  end
-  total
+input.each do |line|
+  last_word = { 'index' => 0, 'word' => '' }
+  last_num = { 'index' => 0, 'num' => 0 }
+  find_last_word(line, last_word)
+  find_last_num(line, last_num)
 end
 
-sum_total_with_letters('day_1/input.txt')
+puts "Part 2: #{total}"
