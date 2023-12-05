@@ -2,16 +2,22 @@
 
 input = File.readlines("#{File.dirname(__FILE__)}/input.txt", chomp: true)
 
+##################################
 # BEGINNING OF PART 1
+##################################
 total = 0
 input.each do |line|
   matched_group = line[/(\d)(.*\d)?/]
   total += [matched_group[0], matched_group[-1]].join.to_i
 end
 puts "Part 1: #{total}"
+##################################
 # END OF PART 1
+##################################
 
-# BEGINNING OF PART 2
+##################################
+# BEGINNING OF PART 2 (not even finished)
+##################################
 total = 0
 def find_last_word(line, last_word)
   %w[one two three four five six seven eight nine].each do |n|
@@ -33,3 +39,6 @@ input.each do |line|
 end
 
 puts "Part 2: #{total}"
+##################################
+# END OF PART 2
+##################################
